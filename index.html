@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main">
+        <div class="main-header">
+            <h2>FORMULÁRIO</h2>
+        </div>
+        <form class="main-form" action="">
+            <label for="nome" class="main-form-name-field">NOME
+                <input type="text" class="main-form-name-input">
+            </label>
+            <label for="telefone" class="main-form-tel-field">TELEFONE
+                <input type="tel" class="main-form-tel-input">
+            </label>
+            <label for="idade" class="main-form-age-field">IDADE
+                <input type="number" class="main-form-age-input" min="0">
+            </label>
+            <div class="show-hide-content">
+                <button type="button" onclick="hide_field(document.querySelector('.main-form-age-field'))" class="hide-content">Esconder idade</button>
+                <button type="button" onclick="show_field(document.querySelector('.main-form-age-field'))" class="show-content">Mostrar idade</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
