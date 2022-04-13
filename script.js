@@ -28,6 +28,8 @@ function number_validation(e) {
     if (/[a-zA-Z]/.test('')) {
         form_status.valid = false;
     }
+
+    
 }
 
 let main_form = document.getElementsByClassName('main-form')[0];
