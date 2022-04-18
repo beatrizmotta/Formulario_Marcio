@@ -28,18 +28,8 @@ function number_validation(e) {
     if (/[a-zA-Z]/.test('')) {
         form_status.valid = false;
     }
-    
-    
-}
 
-function onlyNums(array) {
-    let isOnlyNums = true;
-    array.forEach((e, i) => {
-        if (isNaN(e)) {
-            isOnlyNums = false;
-        }
-    })
-    return isOnlyNums;
+    
 }
 
 let main_form = document.getElementsByClassName('main-form')[0];
@@ -56,32 +46,18 @@ tel_field.addEventListener("keydown", (e) => {
     if (!isNaN(e.key)) {
         tel_chars.push(e.key)
     }
-    
 
-    e.preventDefault();
-    
     if (e.keyCode == 8) {
         tel_chars.pop()
     }
 
-    let startOnlyNums = onlyNums(tel_chars);
-
-    if (tel_chars.length == 2 && startOnlyNums) {
-
-        tel_chars.splice(0, 0, '(')
-        tel_chars.splice(3, 0, ')')
-        tel_chars.splice(4, 0, ' ')
-
-        if (e.keyCode == 8) {
-            tel_chars.pop()
+    let onlyNums = true;
+    tel_chars.forEach((e, i) => {
+        if (isNaN(e)) {
+            onlyNums = false;
         }
-    }
-    
-    
-    let firstHalf = tel_chars.splice(5, 5)
-    console.log(firstHalf)
+    })
 
-    /*
     if (tel_chars.length == 2 && onlyNums) {
 
         tel_chars.splice(0, 0, '(')
@@ -92,9 +68,9 @@ tel_field.addEventListener("keydown", (e) => {
             tel_chars.pop()
         }
     }
-    */
     
     
+    console.log(tel_chars)
 
     e.target.value = tel_chars.join("");
 
