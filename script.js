@@ -53,7 +53,7 @@ let tel_chars = new Array();
 
 tel_field.addEventListener("keydown", (e) => {
     
-    if (!isNaN(e.key)) {
+    if (!isNaN(e.key) && tel_chars.length < 15) {
         tel_chars.push(e.key)
     }
     
@@ -77,24 +77,22 @@ tel_field.addEventListener("keydown", (e) => {
         }
     }
     
-    
-    let firstHalf = tel_chars.splice(5, 5)
-    console.log(firstHalf)
+    // (82) 98211-7442
 
-    /*
-    if (tel_chars.length == 2 && onlyNums) {
-
-        tel_chars.splice(0, 0, '(')
-        tel_chars.splice(3, 0, ')')
-        tel_chars.splice(4, 0, ' ')
+    if (tel_chars.length == 9) {
+        tel_chars.push('-');
 
         if (e.keyCode == 8) {
-            tel_chars.pop()
+            tel_chars.pop();
         }
+
     }
-    */
     
-    
+    if (tel_chars.length == 14) {
+        let aux = tel_chars[9];
+        tel_chars[9] = tel_chars[10];
+        tel_chars[10] = aux;
+    }
 
     e.target.value = tel_chars.join("");
 

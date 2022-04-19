@@ -1,8 +1,13 @@
+html {
+    height: 100vh;
+}
 body {
     background-color: rgb(66, 104, 185);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .main {
@@ -11,7 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 90vw;
+    min-width: 30vw;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 10px 10px;
 }
